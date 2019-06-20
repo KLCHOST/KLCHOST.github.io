@@ -1,11 +1,11 @@
 {
-  "name": "KLC Car Log",
-  "short_name": "KLCCL",
+  "name": "KLC Vheicle Movements",
+  "short_name": "KLCVM",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",
   "Scope": "/",
-  "start_url": "/car",
+  "start_url": "https://klchost.github.io/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
