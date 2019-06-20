@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Statistics</title>
+</head>
+
+<body>
+    <!-- loader -->
+    <div id="loader">
+        <img class="centered" src="images/loader.gif" alt="Loader">
+    </div>
+    <!-- grid -->
+    <div class="grid-container">
+        <!-- navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">KLC VEHICLE LOG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Statistics <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gate-in.html">Gate In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gate-out.html">Gate out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-agent.html">Add agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-consignee.html">Add consignee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-container.html">Add container</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-vessel.html">Add vessel</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- main -->
+        <section class="container-fluid">
+            <div id="content-row" class="row">
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">
+                            <h4>Total Cars</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><span id="totalCars"></span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">
+                            <h4>New Cars Today</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><span id="newCarsToday"></span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">
+                            <h4>Released Today</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><span id="releasedToday"></span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">
+                            <h4>New Cars This Week</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><span id="newCarsThisWeek"></span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">
+                            <h4>Released This Week</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><span id="releasedThisWeek"></span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">
+                            <h4>New Cars This Month</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><span id="newCarsThisMonth"></span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">
+                            <h4>Released This Month</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><span id="releasedThisMonth"></span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
+        <footer class="bg-primary">
+            ©2019 Kingston Logistics Center
+        </footer>
+    </div>
+</body>
+<script src="js/classes/statistics.class.js"></script>
+<script src="js/index.js"></script>
+
+</html>

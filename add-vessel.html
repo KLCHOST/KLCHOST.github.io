@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Add a vessel</title>
+</head>
+
+<body>
+    <!-- loader -->
+    <div id="loader">
+        <img class="centered" src="images/loader.gif" alt="Loader">
+    </div>
+    <!-- grid -->
+    <div class="grid-container">
+        <!-- navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">KLC VEHICLE LOG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gate-in.html">Gate In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gate-out.html">Gate out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-agent.html">Add agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-consignee.html">Add consignee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-container.html">Add container</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Add vessel <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- main -->
+        <section class="container-fluid">
+            <div id="content-row" class="row">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <div class="card text-primary mb-3 text-center">
+                        <div class="card-header">
+                            <h4>Add New Vessel</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="vesselName">Vessel Name</label>
+                                    <input class="form-control" type="text" id="vesselName" name="vesselName" />
+                                </div>
+                                <button id="submitData" type="button"
+                                    class="btn btn-primary btn-lg btn-block">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+            </div>
+        </section>
+        <!-- footer -->
+        <footer class="bg-primary">
+            ©2019 Kingston Logistics Center
+        </footer>
+    </div>
+</body>
+<script src="js/classes/ui.class.js"></script>
+<script src="js/add-vessel.js"></script>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Gate In</title>
+</head>
+
+<body>
+    <!-- loader -->
+    <div id="loader">
+        <img class="centered" src="images/loader.gif" alt="Loader">
+    </div>
+    <!-- grid -->
+    <div class="grid-container">
+        <!-- navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">KLC VEHICLE LOG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Statistics</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Gate In<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gate-out.html">Gate out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-agent.html">Add agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-consignee.html">Add consignee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-container.html">Add container</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-vessel.html">Add vessel</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- main -->
+        <section class="container-fluid">
+            <form id="gateInForm">
+                <fieldset>
+                    <legend>Mobile Unit Check List</legend>
+                    <div class="form-group">
+                        <label for="consigneeSelect">Select consignee</label>
+                        <input list="consigneeSelect" class="form-control" type="text" name="consigneeSelect" />
+                        <datalist class="form-control" id="consigneeSelect"></datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="containerSelect">Select container</label>
+                        <input list="containerSelect" class="form-control" type="text" name="containerSelect" />
+                        <datalist class="form-control" id="containerSelect"></datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="vesselSelect">Select vessel</label>
+                        <input list="vesselSelect" class="form-control" type="text" name="vesselSelect" />
+                        <datalist class="form-control" id="vesselSelect"></datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="agentSelect">Select Agent</label>
+                        <input list="agentSelect" class="form-control" type="text" name="agentSelect" />
+                        <datalist class="form-control" id="agentSelect"></datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleMake">Vehicle make</label>
+                        <input list="vehicleMake" class="form-control" type="text" name="vehicleMake" />
+                        <datalist class="form-control" id="vehicleMake"></datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleModel">Vehicle model</label>
+                        <input class="form-control" type="text" id="vehicleModel" name="vehicleModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleYear">Vehicle
+                            year</label>
+                        <select class="form-control" id="vehicleYear" name="vehicleYear"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleColor">Vehicle color</label>
+                        <input list="vehicleColor" class="form-control" type="text" name="vehicleColor" />
+                        <datalist class="form-control" id="vehicleColor"></datalist>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleIdentificationNumber">Vehicle Identification Number</label>
+                        <input class="form-control" type="text" id="vehicleIdentificationNumber"
+                            name="vehicleIdentificationNumber" />
+                    </div>
+                    <div class="form-group">
+                        <label for="engineNumber">Engine
+                            Number</label>
+                        <input class="form-control" type="text" id="engineNumber" name="engineNumber" />
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleType">Vehicle
+                            Type</label>
+                        <select class="form-control" type="text" id="vehicleType" name="vehicleType"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportedDate">Reported date</label>
+                        <input class="form-control" type="date" id="reportedDate" name="reportedDate" />
+                    </div>
+                    <div class="form-group">
+                        <label for="stripDate">Strip date</label>
+                        <input class="form-control" type="date" id="stripDate" name="stripDate" />
+                    </div>
+                </fieldset>
+                <fieldset id="unitInspection">
+                    <legend>Unit Inspection</legend>
+                    <div class="form-group">
+                        <label for="headLightsSelect">Head lights</label>
+                        <select class="form-control" id="headLightsSelect" name="headLightsSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tailLightsSelect">Tail lights</label>
+                        <select class="form-control" id="tailLightsSelect" name="tailLightsSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="windShieldWipersSelect">Wind Shield Wipers</label>
+                        <select class="form-control" id="windShieldWipersSelect" name="windShieldWipersSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="windShieldSelect">Wind Shield</label>
+                        <select class="form-control" id="windShieldSelect" name="windShieldSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="batterySelect">Battery</label>
+                        <select class="form-control" id="batterySelect" name="batterySelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="hornSelect">Horn</label>
+                        <select class="form-control" id="hornSelect" name="hornSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="clockSelect">Clock</label>
+                        <select class="form-control" id="clockSelect" name="clockSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="radioSelect">Radio</label>
+                        <select class="form-control" id="radioSelect" name="radioSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tapeDeckSelect">Tape Deck</label>
+                        <select class="form-control" id="tapeDeckSelect" name="tapeDeckSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cdSelect">CD</label>
+                        <select class="form-control" id="cdSelect" name="cdSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="acSelect">AC</label>
+                        <select class="form-control" id="acSelect" name="acSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mainTyreSelect">Main tyres</label>
+                        <select class="form-control" id="mainTyreSelect" name="mainTyreSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="spareTyreSelect">Spare tyre</label>
+                        <select class="form-control" id="spareTyreSelect" name="spareTyreSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toolsSelect">Tools</label>
+                        <select class="form-control" id="toolsSelect" name="toolsSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mirrorWingSelect">Wing mirrors</label>
+                        <select class="form-control" id="mirrorWingSelect" name="mirrorWingSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mirrorRearSelect">Rear view mirror</label>
+                        <select class="form-control" id="mirrorRearSelect" name="mirrorRearSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cigaretteLighterSelect">Cigarette lighter</label>
+                        <select class="form-control" id="cigaretteLighterSelect" name="cigaretteLighterSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fenderLeftFrontSelect">Fender left front</label>
+                        <select class="form-control" id="fenderLeftFrontSelect" name="fenderLeftFrontSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fenderRightFrontSelect">Fender right front</label>
+                        <select class="form-control" id="fenderRightFrontSelect" name="fenderRightFrontSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fenderLeftRearSelect">Fender left rear</label>
+                        <select class="form-control" id="fenderLeftRearSelect" name="fenderLeftRearSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fenderRightRearSelect">Fender right rear</label>
+                        <select class="form-control" id="fenderRightRearSelect" name="fenderRightRearSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="hoodSelect">Hood</label>
+                        <select class="form-control" id="hoodSelect" name="hoodSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="trunkLidSelect">Trunk lid</label>
+                        <select class="form-control" id="trunkLidSelect" name="trunkLidSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bodyConditionSelect">Body Condition</label>
+                        <select class="form-control" id="bodyConditionSelect" name="bodyConditionSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="doorSelect">Doors</label>
+                        <select class="form-control" id="doorSelect" name="doorSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ignitionSelect">Ignition Key</label>
+                        <select class="form-control" id="ignitionSelect" name="ignitionSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="trunkSelect">Trunk key</label>
+                        <select class="form-control" id="trunkSelect" name="trunkSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gasTankSelect">Gas tank</label>
+                        <select class="form-control" id="gasTankSelect" name="gasTankSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gasTankCoverSelect">Gas tank cover</label>
+                        <select class="form-control" id="gasTankCoverSelect" name="gasTankCoverSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="frontBumperSelect">Front bumper</label>
+                        <select class="form-control" id="frontBumperSelect" name="frontBumperSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="rearBumperSelect">Rear bumper</label>
+                        <select class="form-control" id="rearBumperSelect" name="rearBumperSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gearShiftSelect">Gear shift knobs</label>
+                        <select class="form-control" id="gearShiftSelect" name="gearShiftSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="antennaesSelect">Antennaes</label>
+                        <select class="form-control" id="antennaesSelect" name="antennaesSelect"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="floorMatsSelect">Floor Mats</label>
+                        <select class="form-control" id="floorMatsSelect" name="floorMatsSelect"></select>
+                    </div>
+                    <button id="submitData" type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </fieldset>
+            </form>
+        </section>
+        <!-- footer -->
+        <footer class="bg-primary">
+            ©2019 Kingston Logistics Center
+        </footer>
+    </div>
+</body>
+<script src="js/gate-In.js"></script>
+
+</html>
